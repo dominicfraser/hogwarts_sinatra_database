@@ -20,6 +20,11 @@ get '/students/:id' do
   erb(:'students/show')
 end
 
+get '/students/:id/edit' do 
+  @student = Student.find(params[:id])
+  erb(:'students/edit')
+end
+
 post '/students' do
   @student = Student.new(params)
   @student.save
