@@ -21,6 +21,7 @@ get '/students/:id' do
 end
 
 get '/students/:id/edit' do 
+  @houses = House.all()
   @student = Student.find(params[:id])
   erb(:'students/edit')
 end
