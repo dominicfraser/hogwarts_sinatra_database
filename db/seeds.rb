@@ -1,4 +1,4 @@
-require_relative('')
+require_relative('../models/student')
 
 student1 = Student.new({
   'first_name' => 'student1fn',
