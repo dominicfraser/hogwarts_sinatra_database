@@ -22,9 +22,9 @@ class Student
   end
 
   def house()
-    sql = "SELECT * FROM houses WHERE id = #{@id} "
+    sql = "SELECT * FROM houses WHERE id = #{@house_id} "
     house_hash = SqlRunner.run(sql).first
-    return house_hash['house_name']
+    return House.new(house_hash)
   end
 
 ### Class Methods
@@ -41,7 +41,5 @@ class Student
     student = SqlRunner.run( sql ).first
     result = Student.new(student)
   end
-
-
 
 end

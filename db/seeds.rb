@@ -32,5 +32,5 @@ student2.save
 
 
 
-binding.pry
+#binding.pry
 nil
