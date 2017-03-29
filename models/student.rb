@@ -12,12 +12,23 @@ class Student
     @age = student_hash['age'].to_i
   end
 
+### Instance methods
+
   def save()
     sql = "INSERT INTO students (first_name, last_name, house, age) VALUES ('#{@first_name}','#{@last_name}','#{@house}',#{@age}) RETURNING id"
 
     student_array = SqlRunner.run(sql)
     @id = student_array.first['id'].to_i
 
+  end
+
+### Class Methods
+
+  def self.all()
+    sql = "SELECT * FROM students"
+    students = SqlRunner.run( sql )
+    result = students.map { |student| Student.new(student) }
+    return result
   end
 
 end
