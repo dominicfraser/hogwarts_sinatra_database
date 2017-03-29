@@ -21,6 +21,11 @@ class Student
     @id = student_array.first['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM students WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   def house()
     sql = "SELECT * FROM houses WHERE id = #{@house_id} "
     house_hash = SqlRunner.run(sql).first
