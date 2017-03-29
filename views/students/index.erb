@@ -1,9 +1,7 @@
 <% @students.each do |student| %>
 <p>Student: <%= student.first_name %> <%= student.last_name %></p>
-<p><a href="/studentss/<%=student.id%>">Student Details</a></p>
-<!-- 
-<p>House: <%= student.house.house_name %></p>
-<p>Age: <%= student.age %></p> -->
+<p><a href="/students/<%=student.id%>">Student Details</a></p>
+
 <br/>
 <form method='post' action='/students/<%= student.id %>/delete'>
     <input type="submit" value="Delete Student">

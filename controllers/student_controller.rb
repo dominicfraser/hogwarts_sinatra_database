@@ -15,6 +15,11 @@ get '/students/new' do
   erb(:'students/new')
 end
 
+get '/students/:id' do
+  @student = Student.find(params[:id])#can put to_i but in this case posgres doesn't need it
+  erb(:'students/show')
+end
+
 post '/students' do
   @student = Student.new(params)
   @student.save
