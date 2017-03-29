@@ -1,6 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('../models/student')
+require_relative('./models/student')
 
 get '/students/' do
   redirect '/students'
