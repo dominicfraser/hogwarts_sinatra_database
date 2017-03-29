@@ -4,5 +4,8 @@
 <p>House: <%= student.house.house_name %></p>
 <p>Age: <%= student.age %></p>
 <br/>
+<form method='post' action='/students/<%= student.id %>/delete'>
+    <input type="submit" value="Delete Student">
+</form>
 <hr/>
 <% end %>
