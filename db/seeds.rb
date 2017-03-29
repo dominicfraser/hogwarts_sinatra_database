@@ -2,27 +2,34 @@ require_relative('../models/student')
 require_relative('../models/house')
 require('pry')
 
-house1 = House.new({
-  'house_name' => 'house1'
+gryffindor = House.new({
+  'house_name' => 'Gryffindor'
   })
-house2 = House.new({
-  'house_name' => 'house2'
+ravenclaw = House.new({
+  'house_name' => 'Ravenclaw'
   })
-
-house1.save
-house2.save
+hufflepuff = House.new({
+  'house_name' => 'Hufflepuff'
+  })
+slytherin = House.new({
+  'house_name' => 'Slytherin'
+  })
+gryffindor.save
+ravenclaw.save
+hufflepuff.save
+slytherin.save
 
 student1 = Student.new({
   'first_name' => '1fn',
   'last_name' => '1ln',
-  'house_id' => house1.id,
+  'house_id' => slytherin.id,
   'age' => 15
   })
 
 student2 = Student.new({
   'first_name' => '2fn',
   'last_name' => '2ln',
-  'house_id' => house2.id,
+  'house_id' => hufflepuff.id,
   'age' => 16
   })
 
