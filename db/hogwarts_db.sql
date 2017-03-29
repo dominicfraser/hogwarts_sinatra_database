@@ -7,5 +7,9 @@ CREATE TABLE students (
   last_name VARCHAR(255),
   house VARCHAR(255),
   age INT4
+);
+
+
+
 
 
