@@ -27,7 +27,7 @@ class House
   end
 
   def self.find(specified_id)
-    sql = "SELECT * FROM houeses WHERE id = #{specified_id}"
+    sql = "SELECT * FROM houses WHERE id = #{specified_id}"
     house = SqlRunner.run(sql).first
     result = House.new(house)
   end
