@@ -17,4 +17,13 @@ class House
     @id = houses_array.first['id'].to_i
   end
 
+### Class Methods
+
+  def self.all
+    sql = "SELECT * FROM houses" 
+    houses = SqlRunner.run(sql)
+    result = houses.map {|house| House.new(house)}
+    return result
+  end
+
 end
