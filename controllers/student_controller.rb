@@ -31,6 +31,13 @@ post '/students' do
   erb(:'students/create')
 end
 
+post '/students/:id' do 
+  @student = Student.new(params)
+  @student.update #takes the id from it being thrown in in the edit section
+  erb(:'students/update')
+  redirect "/students"
+end
+
 post '/students/:id/delete' do
   @student = Student.find(params[:id])
   erb(:'students/destroy')
