@@ -19,7 +19,12 @@ class Student
 
     student_array = SqlRunner.run(sql)
     @id = student_array.first['id'].to_i
+  end
 
+  def house()
+    sql = "SELECT * FROM houses WHERE id = #{@id} "
+    house_hash = SqlRunner.run(sql).first
+    return house_hash['house_name']
   end
 
 ### Class Methods
