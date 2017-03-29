@@ -26,6 +26,11 @@ class Student
     SqlRunner.run(sql)
   end
 
+  def update()
+    sql = "UPDATE students SET (first_name,last_name,house_id,age) = ('#{@first_name}','#{@last_name}',#{@house_id},#{age}) WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   def house()
     sql = "SELECT * FROM houses WHERE id = #{@house_id} "
     house_hash = SqlRunner.run(sql).first
