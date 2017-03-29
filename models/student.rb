@@ -15,7 +15,7 @@ class Student
 ### Instance methods
 
   def save()
-    sql = "INSERT INTO students (first_name, last_name, house, age) VALUES ('#{@first_name}','#{@last_name}','#{@house}',#{@age}) RETURNING id"
+    sql = "INSERT INTO students (first_name, last_name, house_name, age) VALUES ('#{@first_name}','#{@last_name}','#{@house}',#{@age}) RETURNING id"
 
     student_array = SqlRunner.run(sql)
     @id = student_array.first['id'].to_i
