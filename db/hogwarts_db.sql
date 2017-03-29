@@ -3,7 +3,7 @@ DROP TABLE houses;
 
 CREATE TABLE houses (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(255)
+  house_name VARCHAR(255)
 );
 
 CREATE TABLE students (
